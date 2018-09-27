@@ -1,0 +1,45 @@
+class Calc{
+  constructor(){
+    this.number = 0;
+    this.init = true;
+  }
+  add(number){
+    if(this.init){
+      this.init = false;
+    }
+    this.number = this.strip(this.number + number);
+    return this;
+  }
+  substract(number){
+    this.number = this.strip(this.number - number);
+    return this;
+  }
+  multiply(number){
+    this.number = this.strip(this.number * number);
+    return this;
+  }
+  devide(number){
+    if(number !== 0){
+      this.number = this.strip(this.number / number);
+    }else{
+      alert("You can not devide a number by value zero. Will Reset!");
+      return this.reset();
+    }
+    return this;
+  }
+  equals(){
+    return this.number;
+  }
+  reset(){
+    this.number = 0;
+    this.init = true;
+    return this;
+  }
+  strip(num, precision=12){
+    return +parseFloat(num.toPrecision(precision));
+  }
+  isInit(){
+    return this.init;
+  }
+}
+module.exports = Calc;

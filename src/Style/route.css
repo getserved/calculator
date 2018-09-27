@@ -1,0 +1,10 @@
+.calc-menu{
+  background-color:#f04e58;
+  font-size:1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.calc-menu li>a{
+  color:white;
+  text-decoration:none;
+}
